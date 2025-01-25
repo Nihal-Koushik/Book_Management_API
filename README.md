@@ -107,7 +107,7 @@ The server will run at `http://localhost:3000`.
 ---
 
 ## Postman Client Collection for testing APIs
-  - Import the ``*BookManagementAPI.postman_collection.json*`` file into postman app.
+  - Import the ``BookManagementAPI.postman_collection.json`` file into postman app.
 
 ---
 ## Acknowledgments
