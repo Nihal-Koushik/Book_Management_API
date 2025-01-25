@@ -11,7 +11,7 @@
   
 # Database 
   - Install & configure MongoDB and create a database for the api.
-  - Create a ".env" file and add MONGO_URI env variable.
+  - Create a ".env" file and add MONGO_URI and PORT env variable.
 
 # API
 ```
