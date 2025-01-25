@@ -6,6 +6,7 @@
 
 # Set Up
   - You need to install Node and MongoDB.
+  - You need to install postman for testing.
   
 # Database 
   - Install & configure MongoDB and create a database for the api.
@@ -17,3 +18,5 @@ cd Book_Management_API
 npm install 
 npm run dev //dev server
 ```
+# Postman Test
+ - Import the BookManagementAPI.postman_collection.json into postman.
