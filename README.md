@@ -20,4 +20,4 @@ npm install
 npm run dev //dev server
 ```
 # Postman Test
- - Import the BookManagementAPI.postman_collection.json into postman.
+ - Import the "BookManagementAPI.postman_collection.json" file into postman.
