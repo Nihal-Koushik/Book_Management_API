@@ -15,10 +15,10 @@ This project is a RESTful API for managing a bookstore's inventory. Built using 
 ---
 
 ## Technologies Used
-- **Node.js**
-- **Express.js**
-- **MongoDB**
-- **Mongoose**
+- **Node.js**: JavaScript runtime.
+- **Express.js**: Web framework.
+- **MongoDB**: NoSQL database.
+- **Mongoose**: ODM for MongoDB.
 
 ---
 
@@ -33,7 +33,7 @@ This project is a RESTful API for managing a bookstore's inventory. Built using 
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Nihal-Koushik/Book_Management_API.git
+git clone https://github.com/Nihal-Koushik/Book_Management_API1.git
 cd Book_Management_API
 
 ```
