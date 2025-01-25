@@ -106,7 +106,10 @@ The server will run at `http://localhost:3000`.
 
 ---
 
+## Postman Client Collection for testing APIs
+  - Import the *BookManagementAPI.postman_collection.json* file into postman app.
 
+---
 ## Acknowledgments
 - [Express.js Documentation](https://expressjs.com/)
 - [Mongoose Documentation](https://mongoosejs.com/)
