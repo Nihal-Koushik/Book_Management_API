@@ -41,8 +41,8 @@ cd Book_Management_API
 ### 2. Install Dependencies
 ```bash
 npm install
-npm install express mongoose dotenv body-parser morgan cors helmet(required)
-npm install --save-dev eslint(required)
+npm install express mongoose dotenv body-parser morgan cors helmet
+npm install --save-dev eslint
 npm install multer redis rate-limiter-flexible
 
 ```
