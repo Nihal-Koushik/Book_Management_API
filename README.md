@@ -1,23 +1,116 @@
-# Book_Management_API
-  A basic Book Management API with the following features:
-   - Pagination for list endpoints.
-   - Input Validation for all API endpoints.
-   - Error handling with appropriate HTTP status codes.
-   - Rate limiting for API endpoints.
+# Book Management API
 
-# Set Up
-  - You need to install Node and MongoDB.
-  - You need to install postman for testing.
-  
-# Database 
-  - Install & configure MongoDB and create a database for the api.
-  - Create a ".env" file and add MONGO_URI and PORT env variable.
+## Overview
+This project is a RESTful API for managing a bookstore's inventory. Built using **Node.js**, **Express.js**, and **MongoDB**, it allows users to perform CRUD operations on books, including searching, pagination, and more.
 
-# API
-```
+---
+
+## Features
+- **CRUD Operations**: Add, update, retrieve, and delete books.
+- **Search**: Search books by title, author, or genre.
+- **Pagination**: List books with pagination support.
+- **Input Validation**: Ensures all input data is properly validated.
+- **Error Handling**: Handles errors gracefully with appropriate HTTP status codes.
+
+---
+
+## Technologies Used
+- **Node.js**: JavaScript runtime.
+- **Express.js**: Web framework.
+- **MongoDB**: NoSQL database.
+- **Mongoose**: ODM for MongoDB.
+
+---
+
+## Prerequisites
+- **Node.js**: v14 or higher.
+- **MongoDB**: Local or cloud-based (e.g., MongoDB Atlas).
+- **Postman/Thunder Client**: For testing API endpoints.
+
+---
+
+## Set Up & Installation
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Nihal-Koushik/Book_Management_API1.git
 cd Book_Management_API
-npm install 
-npm run dev //dev server
+
 ```
-# Postman Test
- - Import the "BookManagementAPI.postman_collection.json" file into postman.
+
+### 2. Install Dependencies
+```bash
+npm install
+npm install express mongoose dotenv body-parser morgan cors helmet
+npm install --save-dev eslint
+npm install multer redis rate-limiter-flexible
+
+```
+
+### 3. Create a `.env` File
+Create a `.env` file in the project root and add the following:
+```env
+PORT=3000
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<databaseName>?retryWrites=true&w=majority
+```
+Replace `<username>`, `<password>`, and `<databaseName>` with your MongoDB credentials.
+
+### 4. Start the Server
+```bash
+npm start
+```
+The server will run at `http://localhost:3000`.
+
+---
+
+## API Endpoints
+
+### Book Operations
+
+#### 1. **List All Books** (with Pagination)
+- **GET** `/api/books`
+- **Query Parameters**:
+  - `page` (optional): Page number.
+  - `limit` (optional): Number of items per page.
+
+#### 2. **Get Book Details**
+- **GET** `/api/books/:id`
+
+#### 3. **Add a New Book**
+- **POST** `/api/books`
+- **Body**:
+```json
+{
+  "title": "Book Title",
+  "author": "Author Name",
+  "isbn": "123456789",
+  "price": 19.99,
+  "quantity": 50,
+  "publishedDate": "2023-01-01",
+  "genre": "Fiction",
+  "description": "A great book."
+}
+```
+
+#### 4. **Update Book Details**
+- **PUT** `/api/books/:id`
+- **Body**: Same as above.
+
+#### 5. **Delete a Book**
+- **DELETE** `/api/books/:id`
+
+#### 6. **Search Books**
+- **GET** `/api/books/search`
+- **Query Parameters**:
+  - `query` (required): Search term for title, author, or genre.
+
+---
+
+## Postman Client Collection for testing APIs
+  - Import the ``BookManagementAPI.postman_collection.json`` file into postman app.
+
+---
+## Acknowledgments
+- [Express.js Documentation](https://expressjs.com/)
+- [Mongoose Documentation](https://mongoosejs.com/)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)

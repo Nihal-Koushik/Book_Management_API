@@ -1,123 +1,165 @@
 {
     "info": {
-      "name": "Book Management API",
-      "_postman_id": "12345678-abcd-1234-efgh-567890abcdef",
-      "description": "A Postman collection for testing the Book Management API.",
-      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        "name": "Book Management API",
+        "_postman_id": "12345678-abcd-1234-efgh-567890abcdef",
+        "description": "A Postman collection for testing the Book Management API.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [
-      {
-        "name": "Get All Books",
-        "request": {
-          "method": "GET",
-          "header": [],
-          "url": {
-            "raw": "http://localhost:5000/api/books?page=1&limit=10",
-            "protocol": "http",
-            "host": ["localhost"],
-            "port": "5000",
-            "path": ["api", "books"],
-            "query": [
-              { "key": "page", "value": "1" },
-              { "key": "limit", "value": "10" }
-            ]
-          }
-        }
-      },
-      {
-        "name": "Get Book By ID",
-        "request": {
-          "method": "GET",
-          "header": [],
-          "url": {
-            "raw": "http://localhost:5000/api/books/:id",
-            "protocol": "http",
-            "host": ["localhost"],
-            "port": "5000",
-            "path": ["api", "books", ":id"]
-          },
-          "description": "Replace :id with the book's actual ID."
-        }
-      },
-      {
-        "name": "Add a New Book",
-        "request": {
-          "method": "POST",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
+        {
+            "name": "Get All Books",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/api/books?page=1&limit=10",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "api",
+                        "books"
+                    ],
+                    "query": [
+                        {
+                            "key": "page",
+                            "value": "1"
+                        },
+                        {
+                            "key": "limit",
+                            "value": "10"
+                        }
+                    ]
+                }
             }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"title\": \"Sample Book\",\n  \"author\": \"John Doe\",\n  \"ISBN\": \"1234567890\",\n  \"price\": 19.99,\n  \"quantity\": 100,\n  \"publishedDate\": \"2023-01-01\",\n  \"genre\": \"Fiction\",\n  \"description\": \"A sample book description.\"\n}"
-          },
-          "url": {
-            "raw": "http://localhost:5000/api/books",
-            "protocol": "http",
-            "host": ["localhost"],
-            "port": "5000",
-            "path": ["api", "books"]
-          }
-        }
-      },
-      {
-        "name": "Update Book",
-        "request": {
-          "method": "PUT",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
+        },
+        {
+            "name": "Get Book By ID",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/api/books/:id",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "api",
+                        "books",
+                        ":id"
+                    ]
+                },
+                "description": "Replace :id with the book's actual ID."
             }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"title\": \"Updated Book Title\",\n  \"price\": 25.99\n}"
-          },
-          "url": {
-            "raw": "http://localhost:5000/api/books/:id",
-            "protocol": "http",
-            "host": ["localhost"],
-            "port": "5000",
-            "path": ["api", "books", ":id"]
-          },
-          "description": "Replace :id with the book's actual ID."
+        },
+        {
+            "name": "Add a New Book",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"title\": \"Sample Book\",\n  \"author\": \"John Doe\",\n  \"ISBN\": \"1234567890\",\n  \"price\": 19.99,\n  \"quantity\": 100,\n  \"publishedDate\": \"2023-01-01\",\n  \"genre\": \"Fiction\",\n  \"description\": \"A sample book description.\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/api/books",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "api",
+                        "books"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Book",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"title\": \"Updated Book Title\",\n  \"price\": 25.99\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/api/books/:id",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "api",
+                        "books",
+                        ":id"
+                    ]
+                },
+                "description": "Replace :id with the book's actual ID."
+            }
+        },
+        {
+            "name": "Delete Book",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/api/books/:id",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "api",
+                        "books",
+                        ":id"
+                    ]
+                },
+                "description": "Replace :id with the book's actual ID."
+            }
+        },
+        {
+            "name": "Search Books",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/api/books/search?query=Fiction",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "api",
+                        "books",
+                        "search"
+                    ],
+                    "query": [
+                        {
+                            "key": "query",
+                            "value": "Fiction"
+                        }
+                    ]
+                }
+            }
         }
-      },
-      {
-        "name": "Delete Book",
-        "request": {
-          "method": "DELETE",
-          "header": [],
-          "url": {
-            "raw": "http://localhost:5000/api/books/:id",
-            "protocol": "http",
-            "host": ["localhost"],
-            "port": "5000",
-            "path": ["api", "books", ":id"]
-          },
-          "description": "Replace :id with the book's actual ID."
-        }
-      },
-      {
-        "name": "Search Books",
-        "request": {
-          "method": "GET",
-          "header": [],
-          "url": {
-            "raw": "http://localhost:5000/api/books/search?query=Fiction",
-            "protocol": "http",
-            "host": ["localhost"],
-            "port": "5000",
-            "path": ["api", "books", "search"],
-            "query": [
-              { "key": "query", "value": "Fiction" }
-            ]
-          }
-        }
-      }
     ]
-  }
-  
+}
