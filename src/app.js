@@ -1,10 +1,10 @@
 require('dontenv').config();
 const express = require("express");
-const mongoose = require("mongoose");
 const bookRoutes = require("./routes/bookRoutes");
+const connectDB = require('./config/db');
 
 const app = express();
-
+const port = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 
@@ -12,16 +12,13 @@ app.use(express.json());
 app.use("/api/books", bookRoutes);
 
 // MongoDB Connection
-mongoose
-    .connect("process.env.MONGO_URI", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+connectDB()
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`Server running on http://localhost:${port}`);
+        });
     })
-    .then(() => console.log("Connected to MongoDB"))
-    .catch((err) => console.error("MongoDB connection error: ", err));
-
-// Start Server
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+    .catch((error) => {
+        console.error("Failed to connect to database:", error);
+        process.exit(1);
+    });
