@@ -12,13 +12,13 @@ app.use(express.json());
 app.use("/api/books", bookRoutes);
 
 // MongoDB Connection
-connectDB()
+connectDB().sync()
     .then(() => {
         app.listen(port, () => {
             console.log(`Server running on http://localhost:${port}`);
         });
     })
     .catch((error) => {
-        console.error("Failed to connect to database:", error);
+        console.error("Failed to start server:", error);
         process.exit(1);
     });
