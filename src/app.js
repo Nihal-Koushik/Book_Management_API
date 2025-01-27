@@ -12,7 +12,7 @@ app.use(express.json());
 app.use("/api/books", bookRoutes);
 
 // MongoDB Connection
-connectDB().sync()
+connectDB()
     .then(() => {
         app.listen(port, () => {
             console.log(`Server running on http://localhost:${port}`);
