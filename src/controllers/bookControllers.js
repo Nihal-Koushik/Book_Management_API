@@ -1,4 +1,4 @@
-const Book = require('../models/bookModel');
+const Book = require('../models/bookModels');
 
 // List all books with pagination
 exports.listBooks = async (req, res) => {
