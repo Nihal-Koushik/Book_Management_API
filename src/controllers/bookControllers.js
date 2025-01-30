@@ -29,9 +29,13 @@ exports.getBook = async (req, res) => {
 exports.addBook = async (req, res) => {
     try {
         const book = new Book(req.body);
+        await book.validate();
         await book.save();
         res.status(201).json(book);
     } catch (err) {
+        if (err.name === 'ValidationError') {
+            return res.status(400).json({ message: "Validation Failed", erros: err.erros });
+        }
         res.status(400).json({ message: err.message });
     }
 };
@@ -52,7 +56,7 @@ exports.deleteBook = async (req, res) => {
     try {
         const book = await Book.findByIdAndDelete(req.params.id);
         if (!book) return res.status(404).json({ message: 'Book not found' });
-        res.status(200).json({ message: 'Book deleted successfully' });
+        res.status(200).json({ message: 'Book deleted successfully', book });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -60,7 +64,7 @@ exports.deleteBook = async (req, res) => {
 
 // Search books by title, author, or genre
 exports.searchBooks = async (req, res) => {
-    const { query } = req.query;
+    const { query = '' } = req.query;
     try {
         const books = await Book.find({
             $or: [

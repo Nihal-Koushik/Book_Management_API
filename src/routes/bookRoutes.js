@@ -6,7 +6,7 @@ const { rateLimiter } = require('../middlewares/rateLimiter');
 const router = express.Router();
 
 router.get('/books', rateLimiter, bookController.listBooks);
-router.get('/books/:id', rateLimiter, bookController.getBook);
+router.get('/books', rateLimiter, bookController.getBook);
 router.post('/books', validateRequest, bookController.addBook);
 router.put('/books/:id', validateRequest, bookController.updateBook);
 router.delete('/books/:id', bookController.deleteBook);

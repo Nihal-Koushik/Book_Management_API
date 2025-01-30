@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 // Routes
-app.use("/api/books", bookRoutes);
+app.use("/api", bookRoutes);
 
 // MongoDB Connection
 connectDB()
