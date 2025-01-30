@@ -44,7 +44,7 @@ npm install
 ```bash
 npm run dev //dev server 
     or
-npm start //dev derver
+npm start
 ```
 
 ---
